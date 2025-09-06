@@ -140,7 +140,7 @@
             font-size: clamp(16px, 2vw, 20px);
             color: var(--text-secondary);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 0 40px 0;
             line-height: 1.7;
         }
         
@@ -1471,96 +1471,196 @@
                         </p>
                     </div>
                     
-                    <div class="model-grid">
-                        <div class="model-card flagship">
-                            <div class="model-header">
-                                <div class="model-icon">🏆</div>
-                                <div class="model-title">
-                                    <h3>Formosa-1 Series</h3>
-                                    <p class="model-subtitle">專注繁體中文指令遵循與邏輯推理的模型系列</p>
+                    <!-- Chinese Content Model Grid -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <div class="model-grid">
+                            <div class="model-card flagship">
+                                <div class="model-header">
+                                    <div class="model-icon">🏆</div>
+                                    <div class="model-title">
+                                        <h3>Formosa-1 Series</h3>
+                                        <p class="model-subtitle">專注繁體中文指令遵循與邏輯推理的模型系列</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    Formosa-1 (F1) 推理模型集合，專為繁體中文指令遵循和邏輯推理而設計。這是我們從第一原理出發，針對繁中特性優化的旗艦模型系列。
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag special">旗艦模型</span>
+                                    <span class="feature-tag">指令遵循</span>
+                                    <span class="feature-tag">邏輯推理</span>
+                                    <span class="feature-tag">繁中優化</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/formosa-1-series-67ef9d0badeb680162b58ff0" class="model-btn primary">
+                                        <span>🤗 查看模型系列</span>
+                                    </a>
                                 </div>
                             </div>
-                            <p class="model-description">
-                                Formosa-1 (F1) 推理模型集合，專為繁體中文指令遵循和邏輯推理而設計。這是我們從第一原理出發，針對繁中特性優化的旗艦模型系列。
-                            </p>
-                            <div class="model-features">
-                                <span class="feature-tag special">旗艦模型</span>
-                                <span class="feature-tag">指令遵循</span>
-                                <span class="feature-tag">邏輯推理</span>
-                                <span class="feature-tag">繁中優化</span>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">📊</div>
+                                    <div class="model-title">
+                                        <h3>Traditional Chinese Reasoning Datasets</h3>
+                                        <p class="model-subtitle">繁體中文推理能力評測與訓練資料集</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    精心策劃的資料集合，用於評估和訓練各領域的繁體中文推理能力，涵蓋邏輯推理、常識推理等多個維度。
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag">推理評測</span>
+                                    <span class="feature-tag">多領域</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/traditional-chinese-reasoning-datasets-6811a5619c2765c93244e448" class="model-btn secondary">
+                                        <span>查看資料集</span>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="model-actions">
-                                <a href="https://huggingface.co/collections/twinkle-ai/formosa-1-series-67ef9d0badeb680162b58ff0" class="model-btn primary">
-                                    <span>🤗 查看模型系列</span>
-                                </a>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">💻</div>
+                                    <div class="model-title">
+                                        <h3>tw-leetcode</h3>
+                                        <p class="model-subtitle">繁體中文 LeetCode 高效解法資料集</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    針對 LeetCode 題目的繁體中文資料集，包含高效能程式解法（Beats 100%）、完整解題思路，以及時間與空間複雜度分析。採用「Top Concept → Step Implement → Complexity Analysis」結構，便於理解程式邏輯推理過程。
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag special">高效能解法</span>
+                                    <span class="feature-tag">結構化思路</span>
+                                    <span class="feature-tag">複雜度分析</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/datasets/twinkle-ai/tw-leetcode" class="model-btn primary">
+                                        <span>🤗 查看資料集</span>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">📈</div>
+                                    <div class="model-title">
+                                        <h3>Eval Logs</h3>
+                                        <p class="model-subtitle">Twinkle Eval 基準測試記錄</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    使用 Twinkle Eval 生成的基準測試日誌，記錄各種模型在每個提示上的輸出結果，提供透明的評測過程和結果追溯。
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag">評測記錄</span>
+                                    <span class="feature-tag">透明化</span>
+                                    <span class="feature-tag">結果追溯</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/eval-logs-6811a657da5ce4cbd75dbf50" class="model-btn secondary">
+                                        <span>查看評測記錄</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="model-card">
-                            <div class="model-header">
-                                <div class="model-icon">📊</div>
-                                <div class="model-title">
-                                    <h3>Traditional Chinese Reasoning Datasets</h3>
-                                    <p class="model-subtitle">繁體中文推理能力評測與訓練資料集</p>
+                    </div>
+                    
+                    <!-- English Content Model Grid -->
+                    <div class="lang-content" data-lang="en">
+                        <div class="model-grid">
+                            <div class="model-card flagship">
+                                <div class="model-header">
+                                    <div class="model-icon">🏆</div>
+                                    <div class="model-title">
+                                        <h3>Formosa-1 Series</h3>
+                                        <p class="model-subtitle">Flagship model series focused on Traditional Chinese instruction following and logical reasoning</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    Formosa-1 (F1) reasoning model collection, specifically designed for Traditional Chinese instruction following and logical reasoning. This is our flagship model series optimized for Traditional Chinese characteristics, built from first principles.
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag special">Flagship Model</span>
+                                    <span class="feature-tag">Instruction Following</span>
+                                    <span class="feature-tag">Logical Reasoning</span>
+                                    <span class="feature-tag">Traditional Chinese Optimized</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/formosa-1-series-67ef9d0badeb680162b58ff0" class="model-btn primary">
+                                        <span>🤗 View Model Series</span>
+                                    </a>
                                 </div>
                             </div>
-                            <p class="model-description">
-                                精心策劃的資料集合，用於評估和訓練各領域的繁體中文推理能力，涵蓋邏輯推理、常識推理等多個維度。
-                            </p>
-                            <div class="model-features">
-                                <span class="feature-tag">推理評測</span>
-                                <span class="feature-tag">多領域</span>
-                            </div>
-                            <div class="model-actions">
-                                <a href="https://huggingface.co/collections/twinkle-ai/traditional-chinese-reasoning-datasets-6811a5619c2765c93244e448" class="model-btn secondary">
-                                    <span>查看資料集</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="model-card">
-                            <div class="model-header">
-                                <div class="model-icon">💻</div>
-                                <div class="model-title">
-                                    <h3>tw-leetcode</h3>
-                                    <p class="model-subtitle">繁體中文 LeetCode 高效解法資料集</p>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">📊</div>
+                                    <div class="model-title">
+                                        <h3>Traditional Chinese Reasoning Datasets</h3>
+                                        <p class="model-subtitle">Traditional Chinese reasoning evaluation and training datasets</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    Carefully curated datasets for evaluating and training Traditional Chinese reasoning capabilities across multiple domains, covering logical reasoning, commonsense reasoning, and other dimensions.
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag">Reasoning Evaluation</span>
+                                    <span class="feature-tag">Multi-domain</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/traditional-chinese-reasoning-datasets-6811a5619c2765c93244e448" class="model-btn secondary">
+                                        <span>View Datasets</span>
+                                    </a>
                                 </div>
                             </div>
-                            <p class="model-description">
-                                針對 LeetCode 題目的繁體中文資料集，包含高效能程式解法（Beats 100%）、完整解題思路，以及時間與空間複雜度分析。採用「Top Concept → Step Implement → Complexity Analysis」結構，便於理解程式邏輯推理過程。
-                            </p>
-                            <div class="model-features">
-                                <span class="feature-tag special">高效能解法</span>
-                                <span class="feature-tag">結構化思路</span>
-                                <span class="feature-tag">複雜度分析</span>
-                            </div>
-                            <div class="model-actions">
-                                <a href="https://huggingface.co/datasets/twinkle-ai/tw-leetcode" class="model-btn primary">
-                                    <span>🤗 查看資料集</span>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="model-card">
-                            <div class="model-header">
-                                <div class="model-icon">📈</div>
-                                <div class="model-title">
-                                    <h3>Eval Logs</h3>
-                                    <p class="model-subtitle">Twinkle Eval 基準測試記錄</p>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">💻</div>
+                                    <div class="model-title">
+                                        <h3>tw-leetcode</h3>
+                                        <p class="model-subtitle">Traditional Chinese LeetCode high-performance solutions dataset</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    Traditional Chinese dataset for LeetCode problems, featuring high-performance solutions (Beats 100%), complete problem-solving approaches, and time & space complexity analysis. Uses "Top Concept → Step Implement → Complexity Analysis" structure for better understanding of algorithmic reasoning processes.
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag special">High-Performance Solutions</span>
+                                    <span class="feature-tag">Structured Approach</span>
+                                    <span class="feature-tag">Complexity Analysis</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/datasets/twinkle-ai/tw-leetcode" class="model-btn primary">
+                                        <span>🤗 View Dataset</span>
+                                    </a>
                                 </div>
                             </div>
-                            <p class="model-description">
-                                使用 Twinkle Eval 生成的基準測試日誌，記錄各種模型在每個提示上的輸出結果，提供透明的評測過程和結果追溯。
-                            </p>
-                            <div class="model-features">
-                                <span class="feature-tag">評測記錄</span>
-                                <span class="feature-tag">透明化</span>
-                                <span class="feature-tag">結果追溯</span>
-                            </div>
-                            <div class="model-actions">
-                                <a href="https://huggingface.co/collections/twinkle-ai/eval-logs-6811a657da5ce4cbd75dbf50" class="model-btn secondary">
-                                    <span>查看評測記錄</span>
-                                </a>
+                            
+                            <div class="model-card">
+                                <div class="model-header">
+                                    <div class="model-icon">📈</div>
+                                    <div class="model-title">
+                                        <h3>Eval Logs</h3>
+                                        <p class="model-subtitle">Twinkle Eval benchmark testing records</p>
+                                    </div>
+                                </div>
+                                <p class="model-description">
+                                    Benchmark testing logs generated using Twinkle Eval, recording various model outputs for each prompt, providing transparent evaluation processes and result traceability.
+                                </p>
+                                <div class="model-features">
+                                    <span class="feature-tag">Evaluation Records</span>
+                                    <span class="feature-tag">Transparency</span>
+                                    <span class="feature-tag">Result Tracing</span>
+                                </div>
+                                <div class="model-actions">
+                                    <a href="https://huggingface.co/collections/twinkle-ai/eval-logs-6811a657da5ce4cbd75dbf50" class="model-btn secondary">
+                                        <span>View Eval Records</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1743,7 +1843,8 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
             
             const typingElement = document.querySelector('.lang-content.active .typing-effect');
             if (typingElement) {
-                const originalText = typingElement.textContent.trim();
+                // Use stored original text instead of reading from DOM
+                const originalText = typingTexts[currentLang];
                 typingElement.innerHTML = '';
                 typingElement.textContent = '';
                 setTimeout(() => {
@@ -1779,6 +1880,12 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
         
         // Language switching functionality
         let currentLang = 'zh-tw';
+        
+        // Store original typing texts to prevent corruption
+        const typingTexts = {
+            'zh-tw': '👋 歡迎加入我們的 Discord，與社群夥伴一起交流與合作！',
+            'en': '👋 Welcome to join our Discord to collaborate and communicate with community members!'
+        };
         
         function toggleLanguage() {
             const newLang = currentLang === 'zh-tw' ? 'en' : 'zh-tw';
@@ -1816,8 +1923,8 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
             setTimeout(() => {
                 const typingElement = document.querySelector('.lang-content.active .typing-effect');
                 if (typingElement) {
-                    // Get the original text content and clean it
-                    const originalText = typingElement.textContent.trim();
+                    // Use stored original text instead of reading from DOM
+                    const originalText = typingTexts[lang];
                     // Clear the element completely
                     typingElement.innerHTML = '';
                     typingElement.textContent = '';
