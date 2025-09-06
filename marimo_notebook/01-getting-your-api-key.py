@@ -148,7 +148,7 @@ def _():
     # --- IMPORTANT ---
     # Paste your API key here. For better security, we recommend using environment variables.
     # For example: API_KEY=os.environ.get("GEMINI_API_KEY")
-    API_KEY = "AIzaSyCx1lOK2EXjVDjhatkP5czmqMKN9YNv-hY"
+    API_KEY = ""
     # -----------------
 
     # Configure the client with your API key
