@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twinkle AI - 繁體中文語言模型研究社群</title>
+    <title>Twinkle AI - Traditional Chinese LLM Research Community</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
         
@@ -1133,9 +1133,55 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 213, 0, 0.3);
         }
+        
+        /* Language Toggle Styles */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 2px solid var(--primary-yellow);
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-yellow);
+            box-shadow: 0 4px 15px rgba(255, 213, 0, 0.2);
+        }
+        
+        .language-toggle:hover {
+            background: var(--primary-yellow);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 213, 0, 0.4);
+        }
+        
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="language-toggle" onclick="toggleLanguage()">
+        <span id="lang-switch">🇺🇸 EN</span>
+    </div>
+    
     <div class="floating-particles" id="particles"></div>
     
     <div class="container">
@@ -1149,25 +1195,42 @@
             <div class="terminal-content">
                 <div class="logo-section">
                     <div class="star-logo">
-                        <svg viewBox="0 0 24 24">
-                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                        </svg>
+                        <img src="official_image/twinkle-star-logo-circle-1024x1024.svg" alt="Twinkle AI Logo" style="width: 100%; height: 100%; border-radius: 50%;">
                     </div>
                     <div class="brand-text">Twinkle AI</div>
                 </div>
                 
                 <div class="hero">
-                    <h1>繁體中文語言模型研究社群</h1>
-                    <p>🌟 <span class="highlight">Twinkle AI</span> 是在 2024 年誕生的繁中語言模型研究社群，起步於 Llama 開源模型，逐步打造出專屬於繁體中文的落地技術。社群成員來自各行各業，因熱愛模型訓練而聚，從蒐集繁中語料到模型訓練，目前已經開源 Twinkle Eval（高效評測框架）、繁中訓練集文本以及繁中大語言模型。</p>
-                    
-                    <div class="command-line mono">
-                        <span class="typing-effect">👋 歡迎加入我們的 Discord，與社群夥伴一起交流與合作！</span>
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h1>繁體中文語言模型研究社群</h1>
+                        <p><img src="official_image/twinkle-star-logo-circle-1024x1024.svg" alt="Twinkle AI" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"> <span class="highlight">Twinkle AI</span> 是一個專注於繁體中文語言模型的研究社群，成立於 2024 年底。起步於開源 LLaMA 模型，逐步打造出專屬於繁體中文的實用技術。社群成員來自各行各業，因熱愛模型訓練而聚，致力於推廣大語言模型訓練知識，並透過開放合作推動臺灣生成式 AI 的發展。</p>
+                        
+                        <div class="command-line mono">
+                            <span class="typing-effect">👋 歡迎加入我們的 Discord，與社群夥伴一起交流與合作！</span>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="https://discord.gg/v3S9Ku2Y" class="btn">💬 加入 Discord</a>
+                            <a href="https://github.com/ai-twinkle" class="btn">😺 GitHub</a>
+                            <a href="https://huggingface.co/twinkle-ai" class="btn">🤗 Hugging Face</a>
+                        </div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="https://discord.gg/twinkle-ai" class="btn">💬 加入 Discord</a>
-                        <a href="https://github.com/ai-twinkle" class="btn">😺 GitHub</a>
-                        <a href="https://huggingface.co/twinkle-ai" class="btn">🤗 Hugging Face</a>
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h1>Traditional Chinese LLM Research Community</h1>
+                        <p><img src="official_image/twinkle-star-logo-circle-1024x1024.svg" alt="Twinkle AI" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"> <span class="highlight">Twinkle AI</span> is a Traditional Chinese language model research community founded in late 2024. Starting with open-source LLaMA models, we've gradually built practical technologies specifically for Traditional Chinese. Our community members come from diverse professional backgrounds, united by our passion for model training, committed to promoting large language model training knowledge and advancing Taiwan's generative AI development through open collaboration.</p>
+                        
+                        <div class="command-line mono">
+                            <span class="typing-effect">👋 Welcome to join our Discord to collaborate and communicate with community members!</span>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="https://discord.gg/v3S9Ku2Y" class="btn">💬 Join Discord</a>
+                            <a href="https://github.com/ai-twinkle" class="btn">😺 GitHub</a>
+                            <a href="https://huggingface.co/twinkle-ai" class="btn">🤗 Hugging Face</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1182,27 +1245,57 @@
                     <div class="terminal-title">mission.md</div>
                 </div>
                 <div class="terminal-content">
-                    <h2>我們的理念</h2>
-                    <p style="color: var(--text-secondary); font-size: 18px; line-height: 1.7; margin-bottom: 40px;">
-                        社群旨在用實際行動推廣大語言模型的訓練知識，並希望透過開放與共享，推動臺灣在生成式 AI 領域的發展。
-                    </p>
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h2>我們的理念</h2>
+                        <p style="color: var(--text-secondary); font-size: 18px; line-height: 1.7; margin-bottom: 40px;">
+                            社群旨在用實際行動推廣大語言模型的訓練知識，並希望透過開放與共享，推動臺灣在生成式 AI 領域的發展。
+                        </p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h3>🔬 從第一原理出發</h3>
+                                <p>在 LLM 這個快速變遷的領域，我們不滿足於使用第三方套件和 API。我們鼓勵群友重造輪子，深入理解每個環節的底層原理，掌握最真實的技術。</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>🏗️ 培育本土人才</h3>
+                                <p>Twinkle AI 致力於培育台灣本土的 AI 人才，讓我們不會隨波逐流，避免成為只會呼叫工具的「人類 MCP」，而是真正掌握核心技術的開發者。</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>⚡ 超越既有框架</h3>
+                                <p>我們相信能做出比早期套件更好更完善的解決方案。透過重新思考和實作，不僅解決問題，更為台灣累積寶貴的研發能量。</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>🌱 開源與共享</h3>
+                                <p>已開源 Twinkle Eval 評測框架、繁中訓練集文本以及繁中大語言模型，透過開放合作推動台灣生成式 AI 生態系的發展。</p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h3>🔬 從第一原理出發</h3>
-                            <p>在 LLM 這個快速變遷的領域，我們不滿足於使用第三方套件和 API。我們鼓勵群友重造輪子，深入理解每個環節的底層原理，掌握最真實的技術。</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>🏗️ 培育本土人才</h3>
-                            <p>Twinkle AI 致力於培育台灣本土的 AI 人才，讓我們不會隨波逐流，避免成為只會呼叫工具的「人類 MCP」，而是真正掌握核心技術的開發者。</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>⚡ 超越既有框架</h3>
-                            <p>我們相信能做出比早期套件更好更完善的解決方案。透過重新思考和實作，不僅解決問題，更為台灣累積寶貴的研發能量。</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>🌱 開源與共享</h3>
-                            <p>已開源 Twinkle Eval 評測框架、繁中訓練集文本以及繁中大語言模型，透過開放合作推動台灣生成式 AI 生態系的發展。</p>
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h2>Our Philosophy</h2>
+                        <p style="color: var(--text-secondary); font-size: 18px; line-height: 1.7; margin-bottom: 40px;">
+                            Our community aims to promote knowledge of large language model training through practical actions, and hopes to advance Taiwan's development in the generative AI field through openness and sharing.
+                        </p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h3>🔬 First Principles Approach</h3>
+                                <p>In the rapidly evolving field of LLM, we're not satisfied with just using third-party packages and APIs. We encourage community members to reinvent the wheel, deeply understand the underlying principles of each component, and master the most authentic technology.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>🏗️ Cultivating Local Talent</h3>
+                                <p>Twinkle AI is committed to nurturing Taiwan's local AI talent, ensuring we don't just follow trends or become "human MCPs" that only call tools, but become developers who truly master core technologies.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>⚡ Beyond Existing Frameworks</h3>
+                                <p>We believe we can create better and more comprehensive solutions than early packages. Through rethinking and implementation, we not only solve problems but also accumulate valuable R&D capabilities for Taiwan.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>🌱 Open Source & Sharing</h3>
+                                <p>We've open-sourced Twinkle Eval evaluation framework, Traditional Chinese training datasets, and Traditional Chinese large language models, promoting Taiwan's generative AI ecosystem development through open collaboration.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1218,65 +1311,134 @@
                     <div class="terminal-title">projects.md</div>
                 </div>
                 <div class="terminal-content">
-                    <h2>核心專案</h2>
-                    
-                    <div class="philosophy-note">
-                        <div class="note-icon">💡</div>
-                        <div class="note-content">
-                            <p><strong>為什麼要重造輪子？</strong></p>
-                            <p>在 LLM 這個新興領域，每一天每一刻許多東西都在快速轉變。如果只是用第三方的套件、函式庫或 API，則會難以習得最底層的運作原理。我們鼓勵從第一原理思考，打造更適合繁中的解決方案。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="project-grid">
-                        <div class="project-card featured">
-                            <div class="project-header">
-                                <div class="project-icon">🧪</div>
-                                <div class="project-title">
-                                    <h3>LLM Lab</h3>
-                                    <p class="project-subtitle">繁中模型研究與實作的 Lab</p>
-                                </div>
-                            </div>
-                            <p class="project-description">
-                                完整的繁體中文大型語言模型研究環境，從語料收集、預處理、模型訓練，提供研究者深入理解每個環節的工具和方法。
-                            </p>
-                            <div class="project-features">
-                                <span class="feature-tag">模型訓練</span>
-                                <span class="feature-tag">實驗工具</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/ai-twinkle/llm-lab" class="project-btn primary">
-                                    <span>查看專案</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                                    </svg>
-                                </a>
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h2>核心專案</h2>
+                        
+                        <div class="philosophy-note">
+                            <div class="note-icon">💡</div>
+                            <div class="note-content">
+                                <p><strong>為什麼要重造輪子？</strong></p>
+                                <p>在 LLM 這個新興領域，每一天每一刻許多東西都在快速轉變。如果只是用第三方的套件、函式庫或 API，則會難以習得最底層的運作原理。我們鼓勵從第一原理思考，打造更適合繁中的解決方案。</p>
                             </div>
                         </div>
                         
-                        <div class="project-card featured">
-                            <div class="project-header">
-                                <div class="project-icon">🔍</div>
-                                <div class="project-title">
-                                    <h3>Twinkle Eval</h3>
-                                    <p class="project-subtitle">高效且準確的 AI 評測工具</p>
+                        <div class="project-grid">
+                            <div class="project-card featured">
+                                <div class="project-header">
+                                    <div class="project-icon">🧪</div>
+                                    <div class="project-title">
+                                        <h3>LLM Lab</h3>
+                                        <p class="project-subtitle">繁中模型研究與實作的 Lab</p>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    完整的繁體中文大型語言模型研究環境，從語料收集、預處理、模型訓練，提供研究者深入理解每個環節的工具和方法。
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">模型訓練</span>
+                                    <span class="feature-tag">實驗工具</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/ai-twinkle/llm-lab" class="project-btn primary">
+                                        <span>查看專案</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <p class="project-description">
-                                從底層重新設計的繁體中文語言模型評測框架，不依賴第三方評測套件，提供更準確、更適合繁中的評測標準和方法。
-                            </p>
-                            <div class="project-features">
-                                <span class="feature-tag">評測框架</span>
-                                <span class="feature-tag">性能分析</span>
-                                <span class="feature-tag">基準測試</span>
+                            
+                            <div class="project-card featured">
+                                <div class="project-header">
+                                    <div class="project-icon">🔍</div>
+                                    <div class="project-title">
+                                        <h3>Twinkle Eval</h3>
+                                        <p class="project-subtitle">高效且準確的 AI 評測工具</p>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    從底層重新設計的繁體中文語言模型評測框架，不依賴第三方評測套件，提供更準確、更適合繁中的評測標準和方法。
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">評測框架</span>
+                                    <span class="feature-tag">性能分析</span>
+                                    <span class="feature-tag">基準測試</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/ai-twinkle/Eval" class="project-btn primary">
+                                        <span>查看專案</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/ai-twinkle/Eval" class="project-btn primary">
-                                    <span>查看專案</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                                    </svg>
-                                </a>
+                        </div>
+                    </div>
+                    
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h2>Core Projects</h2>
+                        
+                        <div class="philosophy-note">
+                            <div class="note-icon">💡</div>
+                            <div class="note-content">
+                                <p><strong>Why reinvent the wheel?</strong></p>
+                                <p>In the emerging field of LLM, many things are changing rapidly every day and every moment. If we only use third-party packages, libraries, or APIs, it will be difficult to learn the underlying principles. We encourage thinking from first principles and building solutions that are more suitable for Traditional Chinese.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-grid">
+                            <div class="project-card featured">
+                                <div class="project-header">
+                                    <div class="project-icon">🧪</div>
+                                    <div class="project-title">
+                                        <h3>LLM Lab</h3>
+                                        <p class="project-subtitle">Traditional Chinese Model Research & Implementation Lab</p>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    A complete Traditional Chinese large language model research environment, from corpus collection and preprocessing to model training, providing researchers with tools and methods to deeply understand each component.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Model Training</span>
+                                    <span class="feature-tag">Research Tools</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/ai-twinkle/llm-lab" class="project-btn primary">
+                                        <span>View Project</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card featured">
+                                <div class="project-header">
+                                    <div class="project-icon">🔍</div>
+                                    <div class="project-title">
+                                        <h3>Twinkle Eval</h3>
+                                        <p class="project-subtitle">Efficient & Accurate AI Evaluation Tool</p>
+                                    </div>
+                                </div>
+                                <p class="project-description">
+                                    A Traditional Chinese language model evaluation framework redesigned from the ground up, independent of third-party evaluation packages, providing more accurate evaluation standards and methods suitable for Traditional Chinese.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Eval Framework</span>
+                                    <span class="feature-tag">Performance Analysis</span>
+                                    <span class="feature-tag">Benchmarking</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/ai-twinkle/Eval" class="project-btn primary">
+                                        <span>View Project</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1293,10 +1455,21 @@
                     <div class="terminal-title">models-and-datasets.yaml</div>
                 </div>
                 <div class="terminal-content">
-                    <h2>模型與資料集</h2>
-                    <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
-                        我們的研究成果已在 Hugging Face 上開源，包含推理模型、資料集和評測基準。
-                    </p>
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h2>模型與資料集</h2>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
+                            我們的研究成果已在 Hugging Face 上開源，包含推理模型、資料集和評測基準。
+                        </p>
+                    </div>
+                    
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h2>Models & Datasets</h2>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
+                            Our research results have been open-sourced on Hugging Face, including inference models, datasets, and evaluation benchmarks.
+                        </p>
+                    </div>
                     
                     <div class="model-grid">
                         <div class="model-card flagship">
@@ -1404,18 +1577,37 @@
                     <div class="terminal-title">quick-start.py</div>
                 </div>
                 <div class="terminal-content">
-                    <h2>快速開始</h2>
-                    
-                    <div class="command-line mono" style="margin: 20px 0;">
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h2>快速開始</h2>
+                        
+                        <div class="command-line mono" style="margin: 20px 0;">
 # clone LLM Lab 實驗環境
 git clone https://github.com/ai-twinkle/llm-lab.git</div>
-                    
-                    <div class="command-line mono" style="margin: 20px 0;">
+                        
+                        <div class="command-line mono" style="margin: 20px 0;">
 # 開始你的繁中 AI 研究之旅 🚀</div>
+                        
+                        <p style="color: var(--text-secondary); margin: 30px 0; line-height: 1.7;">
+                            立即加入我們的 Discord 社群，與其他開發者和研究者交流。獲取最新的模型更新、技術分享，以及參與開源項目的機會。
+                        </p>
+                    </div>
                     
-                    <p style="color: var(--text-secondary); margin: 30px 0; line-height: 1.7;">
-                        立即加入我們的 Discord 社群，與其他開發者和研究者交流。獲取最新的模型更新、技術分享，以及參與開源項目的機會。
-                    </p>
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h2>Quick Start</h2>
+                        
+                        <div class="command-line mono" style="margin: 20px 0;">
+# clone LLM Lab research environment
+git clone https://github.com/ai-twinkle/llm-lab.git</div>
+                        
+                        <div class="command-line mono" style="margin: 20px 0;">
+# Start your Traditional Chinese AI research journey 🚀</div>
+                        
+                        <p style="color: var(--text-secondary); margin: 30px 0; line-height: 1.7;">
+                            Join our Discord community now to communicate with other developers and researchers. Get the latest model updates, technical sharing, and opportunities to participate in open source projects.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1429,27 +1621,57 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
                     <div class="terminal-title">community.json</div>
                 </div>
                 <div class="terminal-content">
-                    <h2>社群連結</h2>
-                    <div class="links-section">
-                        <div class="link-card">
-                            <span class="icon">💬</span>
-                            <a href="https://discord.gg/twinkle-ai">Discord 社群</a>
-                            <p class="description">即時交流與合作平台</p>
+                    <!-- Chinese Content -->
+                    <div class="lang-content active" data-lang="zh-tw">
+                        <h2>社群連結</h2>
+                        <div class="links-section">
+                            <div class="link-card">
+                                <span class="icon">💬</span>
+                                <a href="https://discord.gg/v3S9Ku2Y">Discord 社群</a>
+                                <p class="description">即時交流與合作平台</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">😺</span>
+                                <a href="https://github.com/ai-twinkle">GitHub</a>
+                                <p class="description">開源代碼與項目倉庫</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">🤗</span>
+                                <a href="https://huggingface.co/twinkle-ai">Hugging Face</a>
+                                <p class="description">模型與資料集發布平台</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">🔗</span>
+                                <a href="https://www.linkedin.com/company/twinkle-ai/">LinkedIn</a>
+                                <p class="description">專業網絡與合作</p>
+                            </div>
                         </div>
-                        <div class="link-card">
-                            <span class="icon">😺</span>
-                            <a href="https://github.com/ai-twinkle">GitHub</a>
-                            <p class="description">開源代碼與項目倉庫</p>
-                        </div>
-                        <div class="link-card">
-                            <span class="icon">🤗</span>
-                            <a href="https://huggingface.co/twinkle-ai">Hugging Face</a>
-                            <p class="description">模型與資料集發布平台</p>
-                        </div>
-                        <div class="link-card">
-                            <span class="icon">🔗</span>
-                            <a href="#linkedin">LinkedIn</a>
-                            <p class="description">專業網絡與合作</p>
+                    </div>
+                    
+                    <!-- English Content -->
+                    <div class="lang-content" data-lang="en">
+                        <h2>Community Links</h2>
+                        <div class="links-section">
+                            <div class="link-card">
+                                <span class="icon">💬</span>
+                                <a href="https://discord.gg/v3S9Ku2Y">Discord Community</a>
+                                <p class="description">Real-time communication & collaboration</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">😺</span>
+                                <a href="https://github.com/ai-twinkle">GitHub</a>
+                                <p class="description">Open source code & project repository</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">🤗</span>
+                                <a href="https://huggingface.co/twinkle-ai">Hugging Face</a>
+                                <p class="description">Models & datasets publishing platform</p>
+                            </div>
+                            <div class="link-card">
+                                <span class="icon">🔗</span>
+                                <a href="https://www.linkedin.com/company/twinkle-ai/">LinkedIn</a>
+                                <p class="description">Professional networking & collaboration</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1461,13 +1683,22 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <svg viewBox="0 0 24 24">
-                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                    </svg>
+                    <img src="official_image/twinkle-star-logo-circle-1024x1024.svg" alt="Twinkle AI Logo" style="width: 100%; height: 100%; border-radius: 50%;">
                 </div>
-                <p>&copy; 2025 Twinkle AI Community. Built with ❤️ in Taiwan 🇹🇼</p>
-                <div class="command-line mono" style="margin-top: 25px; background: rgba(255, 213, 0, 0.05); border-color: rgba(255, 213, 0, 0.2);">
-                    echo "一起打造繁體中文AI的未來" | figlet
+                <!-- Chinese Footer Content -->
+                <div class="lang-content active" data-lang="zh-tw">
+                    <p>&copy; 2025 Twinkle AI Community. Built with ❤️ in Taiwan 🇹🇼</p>
+                    <div class="command-line mono" style="margin-top: 25px; background: rgba(255, 213, 0, 0.05); border-color: rgba(255, 213, 0, 0.2);">
+                        echo "一起打造繁體中文AI的未來" | figlet
+                    </div>
+                </div>
+                
+                <!-- English Footer Content -->
+                <div class="lang-content" data-lang="en">
+                    <p>&copy; 2025 Twinkle AI Community. Built with ❤️ in Taiwan 🇹🇼</p>
+                    <div class="command-line mono" style="margin-top: 25px; background: rgba(255, 213, 0, 0.05); border-color: rgba(255, 213, 0, 0.2);">
+                        echo "Building the future of Traditional Chinese AI together" | figlet
+                    </div>
                 </div>
             </div>
         </div>
@@ -1489,14 +1720,16 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
             }
         }
         
-        // Typing effect for command line
+        // Typing effect for command line with proper Unicode handling
         function typeWriter(element, text, speed = 80) {
+            // Convert to array to handle Unicode characters properly
+            const chars = Array.from(text);
             let i = 0;
             element.innerHTML = '';
             
             function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
+                if (i < chars.length) {
+                    element.innerHTML += chars[i];
                     i++;
                     setTimeout(type, speed);
                 }
@@ -1508,9 +1741,10 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             
-            const typingElement = document.querySelector('.typing-effect');
+            const typingElement = document.querySelector('.lang-content.active .typing-effect');
             if (typingElement) {
-                const originalText = typingElement.textContent;
+                const originalText = typingElement.textContent.trim();
+                typingElement.innerHTML = '';
                 typingElement.textContent = '';
                 setTimeout(() => {
                     typeWriter(typingElement, originalText, 60);
@@ -1541,6 +1775,66 @@ git clone https://github.com/ai-twinkle/llm-lab.git</div>
                     });
                 }
             });
+        });
+        
+        // Language switching functionality
+        let currentLang = 'zh-tw';
+        
+        function toggleLanguage() {
+            const newLang = currentLang === 'zh-tw' ? 'en' : 'zh-tw';
+            switchLanguage(newLang);
+        }
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update language switch button
+            const langSwitch = document.getElementById('lang-switch');
+            if (lang === 'zh-tw') {
+                langSwitch.innerHTML = '🇺🇸 EN';
+            } else {
+                langSwitch.innerHTML = '🇹🇼 中文';
+            }
+            
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show content for selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(content => {
+                content.classList.add('active');
+            });
+            
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferred-language', lang);
+            
+            // Restart typing effect for the new language
+            setTimeout(() => {
+                const typingElement = document.querySelector('.lang-content.active .typing-effect');
+                if (typingElement) {
+                    // Get the original text content and clean it
+                    const originalText = typingElement.textContent.trim();
+                    // Clear the element completely
+                    typingElement.innerHTML = '';
+                    typingElement.textContent = '';
+                    // Start typing animation after a short delay
+                    setTimeout(() => {
+                        typeWriter(typingElement, originalText, 60);
+                    }, 500);
+                }
+            }, 200);
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang && savedLang !== currentLang) {
+                switchLanguage(savedLang);
+            }
         });
     </script>
 </body>

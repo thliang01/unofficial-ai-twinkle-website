@@ -9,17 +9,24 @@ This is the "unofficial-ai-twinkle-website" repository, which contains a static 
 ## Repository Structure
 
 - `index.html` - Main website file (static HTML with embedded CSS and JavaScript)
-- `README.md` - Basic project description
+- `README.md` - Comprehensive project overview and quick start guide
+- `STYLEGUIDE.md` - Style guide for notebook development and Traditional Chinese content
+- `CODE_OF_CONDUCT.md` - Community code of conduct and behavior guidelines
 - `marimo_notebook/` - Contains marimo notebooks for Gemini API tutorials
 - `jupyter_notebook/` - Contains original Jupyter notebooks for Gemini API tutorials  
 - `notebook/` - Empty directory for additional notebooks
 - `official_image/` - Contains official Twinkle AI logos and style guide
-  - `twinkle-star-logo-circle-1024x1024.png` - Circular logo (1024x1024)
-  - `twinkle-star-logo-round-1024x1024.png` - Round logo (1024x1024)
-  - `twinkle-title-black-1920x.png` - Title logo on black background
-  - `twinkle-title-reverse-1920x.png` - Title logo reversed
-  - `twinkle-title-white-1920x.png` - Title logo on white background
+  - `twinkle-star-logo-circle-1024x1024.svg` - Circular logo (SVG format)
+  - `twinkle-star-logo-round-1024x1024.svg` - Round logo (SVG format)
+  - `twinkle-title-black-1920x.svg` - Title logo on black background (SVG format)
+  - `twinkle-title-reverse-1920x.svg` - Title logo reversed (SVG format)
+  - `twinkle-title-white-1920x.svg` - Title logo on white background (SVG format)
   - `style.md` - Brand style guide (primary color: #ffd500, font: Cabin)
+- `official_link/` - Contains official links and resources
+  - `README.md` - Official links to Twinkle AI platforms (Discord, GitHub, Hugging Face, LinkedIn)
+  - `link.md` - Primary official links file with current platform URLs
+- `faq/` - Contains frequently asked questions and community information
+  - `faq.md` - Community FAQ in Traditional Chinese explaining Twinkle AI's mission and philosophy
 - `unofficial-ai-twinkle-website/` - Python virtual environment directory (legacy)
 - `.venv/` - Current Python virtual environment (managed by uv)
 - `.env` - Environment variables (API keys, not tracked in git)
@@ -114,9 +121,10 @@ The website showcases:
 ## External Links
 
 The website links to:
-- Discord community: https://discord.gg/twinkle-ai
+- Discord community: https://discord.gg/v3S9Ku2Y
 - GitHub organization: https://github.com/ai-twinkle
 - Hugging Face organization: https://huggingface.co/twinkle-ai
+- LinkedIn company page: https://www.linkedin.com/company/twinkle-ai/
 - Specific model and dataset collections on Hugging Face
 
 ## Notes for Development
@@ -168,10 +176,32 @@ The project uses these main dependencies:
 - **python-dotenv**: Environment variable management from .env files
 - **openai**: OpenAI API client (optional for additional AI features)
 
+## Community Guidelines
+
+### Style Guide
+The repository follows specific style guidelines outlined in `STYLEGUIDE.md`:
+- **Language**: Content and comments primarily in **Traditional Chinese**
+- **Terminology**: Use "台灣" instead of "台灣地區"
+- **Notebook Structure**: Include learning objectives, key points, implementation steps, exercises, and further reading
+- **Code Style**: Prioritize teaching clarity, use meaningful variable names, follow PEP8 for Python
+- **File Naming**: Use `00_`, `01_`, `02_` prefixes for notebooks, snake_case for dataset files
+
+### Code of Conduct
+The community follows the Contributor Covenant Code of Conduct as outlined in `CODE_OF_CONDUCT.md`:
+- **Respectful Interaction**: Maintain respectful and inclusive attitudes
+- **Constructive Feedback**: Provide constructive opinions, avoid personal attacks
+- **Safe Environment**: Keep the community safe and friendly
+- **Prohibited Behavior**: No discrimination, harassment, or malicious misinformation
+- **Contact**: Use official Twinkle AI community channels for concerns
+
 ## File Organization
 
 - Keep all website files in the root directory
 - Store notebooks in `marimo_notebook/` for converted marimo files
 - Store original Jupyter notebooks in `jupyter_notebook/`
 - Place images and assets in `official_image/`
+- Store official links and resources in `official_link/`
+- Store FAQ and community information in `faq/`
+- Follow the style guide in `STYLEGUIDE.md` for notebook development
+- Adhere to the community standards in `CODE_OF_CONDUCT.md`
 - Never commit the `.env` file (contains sensitive API keys)
