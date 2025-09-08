@@ -26,11 +26,23 @@
         }
         
         body {
-            font-family: 'Open Huninn', 'Cabin', sans-serif;
+            font-family: 'Cabin', sans-serif;
             background: var(--dark-bg);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+        
+        /* Traditional Chinese content font */
+        [data-lang="zh-tw"], 
+        [data-lang="zh-tw"] * {
+            font-family: 'Open Huninn', sans-serif !important;
+        }
+        
+        /* English content font */
+        [data-lang="en"], 
+        [data-lang="en"] * {
+            font-family: 'Cabin', sans-serif !important;
         }
         
         .mono {
@@ -114,7 +126,7 @@
         }
         
         .brand-text {
-            font-family: 'Open Huninn', 'Cabin', sans-serif;
+            font-family: 'Cabin', sans-serif;
             font-size: clamp(32px, 5vw, 64px);
             font-weight: 700;
             color: var(--text-primary);
@@ -193,7 +205,7 @@
             color: var(--primary-yellow);
             padding: 15px 30px;
             text-decoration: none;
-            font-family: 'Open Huninn', 'Cabin', sans-serif;
+            font-family: 'Cabin', sans-serif;
             font-size: 16px;
             font-weight: 600;
             border-radius: 8px;
