@@ -16,12 +16,25 @@ This is the "unofficial-ai-twinkle-website" repository, which contains a static 
 - `jupyter_notebook/` - Contains original Jupyter notebooks for Gemini API tutorials  
 - `notebook/` - Empty directory for additional notebooks
 - `official_image/` - Contains official Twinkle AI logos and style guide
-  - `twinkle-star-logo-circle-1024x1024.svg` - Circular logo (SVG format)
+  - `twinkle-star-logo-circle-1024x1024.svg` - Circular logo (SVG format, also used as favicon)
   - `twinkle-star-logo-round-1024x1024.svg` - Round logo (SVG format)
   - `twinkle-title-black-1920x.svg` - Title logo on black background (SVG format)
   - `twinkle-title-reverse-1920x.svg` - Title logo reversed (SVG format)
   - `twinkle-title-white-1920x.svg` - Title logo on white background (SVG format)
   - `style.md` - Brand style guide (primary color: #ffd500, font: Cabin)
+- `assets/` - Contains custom SVG icons for website components
+  - `unified_twinkle_ai_ mascot.png` - Main mascot image
+  - `The_First.svg` - First Principles icon
+  - `The_Cultivating.svg` - Cultivating Local Talent icon
+  - `The_Arc.svg` - Beyond Existing Frameworks icon
+  - `The_Open.svg` - Open Source & Sharing icon
+  - `The_labs.svg` - LLM Lab project icon
+  - `The_wheel.svg` - Philosophy note icon
+  - `The_Eval.svg` - Twinkle Eval project icon
+  - `The_F1.svg` - Formosa-1 Series model icon
+  - `The_reasoning_dataset.svg` - Reasoning Datasets icon
+  - `The_coder.svg` - tw-leetcode icon
+  - `The_EVAL_EVAL.svg` - Eval Logs icon
 - `official_link/` - Contains official links and resources
   - `README.md` - Official links to Twinkle AI platforms (Discord, GitHub, Hugging Face, LinkedIn)
   - `link.md` - Primary official links file with current platform URLs
@@ -95,15 +108,17 @@ The website is a single-page application built with vanilla HTML, CSS, and JavaS
 - **Layout**: Terminal-style windows with header dots and content sections
 - **Animations**: CSS animations for particles, typing effects, and hover interactions
 - **Responsive**: Mobile-first design with CSS Grid and Flexbox
-- **JavaScript**: Vanilla JS for particle effects, typing animation, and smooth scrolling
+- **Typography**: Language-specific fonts (Open Huninn for Traditional Chinese, Cabin for English)
+- **Icons**: Custom SVG icons throughout the site replacing emoji
+- **JavaScript**: Vanilla JS for particle effects, typing animation, language switching, and smooth scrolling
 
 ## Content Structure
 
 The website showcases:
-1. **Hero Section**: Community introduction and branding
-2. **Mission**: Philosophy and goals of the Twinkle AI community
-3. **Core Projects**: LLM Lab and Twinkle Eval frameworks
-4. **Models & Datasets**: Formosa-1 series and various datasets on Hugging Face
+1. **Hero Section**: Community introduction and branding with mascot display
+2. **Mission**: Philosophy and goals of the Twinkle AI community with custom icons
+3. **Core Projects**: LLM Lab and Twinkle Eval frameworks with custom SVG icons
+4. **Models & Datasets**: Formosa-1 series and various datasets on Hugging Face with custom icons
 5. **Quick Start**: Getting started with their repositories
 6. **Community Links**: Discord, GitHub, and Hugging Face profiles
 
@@ -114,7 +129,11 @@ The website showcases:
 - Typing effect animations for dynamic text
 - Responsive card layouts with hover effects
 - Yellow accent color (#ffd500) throughout
-- Traditional Chinese content focus
+- Bilingual support (Traditional Chinese / English) with language toggle
+- Language-specific typography (Open Huninn Font for Chinese, Cabin for English)
+- Custom SVG icons replacing emoji throughout the interface
+- Mascot image display in terminal window format
+- Website favicon using Twinkle AI logo
 - Interactive terminal-style windows with colored dots
 - Smooth scrolling and hover transforms
 
@@ -132,10 +151,13 @@ The website links to:
 ### Website Development
 - The website is completely self-contained in `index.html`
 - No external dependencies or build tools required
-- Uses Google Fonts (Cabin and JetBrains Mono)
+- Uses Google Fonts (Cabin and JetBrains Mono) and Open Huninn Font for Traditional Chinese
 - All styling and scripting is inline for simplicity
 - Color scheme: Dark theme (#0a0a0a) with yellow accents (#ffd500)
 - Terminal aesthetics with red/yellow/green dots for window headers
+- Custom SVG icons stored in `assets/` directory
+- Language-specific font loading with CSS targeting
+- Favicon implementation using official logo
 
 ### Notebook Development
 - The marimo notebooks are separate educational content about Gemini API usage

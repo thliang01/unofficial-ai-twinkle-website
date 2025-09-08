@@ -25,15 +25,19 @@ python -m http.server 8000
 - **Animated background particles** floating upward
 - **Typing effect animations** for dynamic text
 - **Responsive design** with mobile-first approach
-- **Traditional Chinese content** focus
+- **Bilingual support** with Traditional Chinese / English language toggle
+- **Language-specific typography** - Open Huninn Font for Traditional Chinese, Cabin for English
+- **Custom SVG icons** replacing emoji throughout the interface
+- **Mascot display** in terminal window format
+- **Website favicon** using official Twinkle AI logo
 - **Interactive terminal-style windows** with colored header dots
 
 ## Content Sections
 
-1. **Hero Section**: Community introduction and branding
-2. **Mission**: Philosophy and goals of the Twinkle AI community
-3. **Core Projects**: LLM Lab and Twinkle Eval frameworks
-4. **Models & Datasets**: Formosa-1 series and various datasets
+1. **Hero Section**: Community introduction and branding with mascot display
+2. **Mission**: Philosophy and goals of the Twinkle AI community with custom icons
+3. **Core Projects**: LLM Lab and Twinkle Eval frameworks with custom SVG icons
+4. **Models & Datasets**: Formosa-1 series and various datasets with custom icons
 5. **Quick Start**: Getting started with repositories
 6. **Community Links**: Discord, GitHub, and Hugging Face profiles
 
@@ -57,11 +61,13 @@ For notebook development and tutorials, see the [AGENTS.md](AGENTS.md) file for 
 
 ## Repository Structure
 
-- `index.html` - Main website file
+- `index.html` - Main website file (static HTML with embedded CSS and JavaScript)
+- `AGENTS.md` - Detailed development guidance and architecture documentation
 - `STYLEGUIDE.md` - Development and content style guidelines
 - `CODE_OF_CONDUCT.md` - Community behavior guidelines
+- `assets/` - Custom SVG icons and mascot images
 - `marimo_notebook/` - Marimo notebooks for Gemini API tutorials
 - `jupyter_notebook/` - Original Jupyter notebooks
-- `official_image/` - Official Twinkle AI logos and brand assets
+- `official_image/` - Official Twinkle AI logos and brand assets (includes favicon)
 - `official_link/` - Official platform links and resources
 - `faq/` - FAQ and community information in Traditional Chinese
