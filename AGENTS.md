@@ -46,6 +46,8 @@ This is the "unofficial-ai-twinkle-website" repository, which contains a static 
 - `.env.example` - Template for environment variables
 - `pyproject.toml` - Python project configuration for uv
 - `uv.lock` - Locked dependency versions
+- `PR_Message_v0.0.1.md` - Pull request documentation for v0.0.1 enhancements
+- `Release_v0.0.1.md` - GitHub release notes and copy-ready content for v0.0.1
 
 ## Development Setup
 
@@ -221,9 +223,28 @@ The community follows the Contributor Covenant Code of Conduct as outlined in `C
 - Keep all website files in the root directory
 - Store notebooks in `marimo_notebook/` for converted marimo files
 - Store original Jupyter notebooks in `jupyter_notebook/`
-- Place images and assets in `official_image/`
+- Place images and assets in `official_image/` for brand assets
+- Store custom SVG icons and mascot in `assets/` directory
 - Store official links and resources in `official_link/`
 - Store FAQ and community information in `faq/`
+- Store release documentation in root (PR_Message_*.md, Release_*.md files)
 - Follow the style guide in `STYLEGUIDE.md` for notebook development
 - Adhere to the community standards in `CODE_OF_CONDUCT.md`
 - Never commit the `.env` file (contains sensitive API keys)
+
+## Release Management
+
+### Version 0.0.1 (Current)
+- **Typography Enhancement**: Language-specific fonts (Open Huninn + Cabin)
+- **Icon System**: Custom SVG icons replacing all emoji
+- **Brand Integration**: Mascot display and favicon implementation
+- **Documentation**: Comprehensive updates to AGENTS.md and README.md
+- **Files**: `Release_v0.0.1.md` contains GitHub release content
+
+### Creating New Releases
+1. Update website features and documentation
+2. Create PR_Message_*.md with detailed changes
+3. Create Release_*.md with GitHub-ready content
+4. Commit changes to main branch
+5. Create and push git tag (e.g., `git tag -a v0.0.2 -m "Release message"`)
+6. Use Release_*.md content for GitHub release creation
