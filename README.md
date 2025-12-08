@@ -54,6 +54,11 @@ This is a completely self-contained static website with no build process require
 
 For notebook development and tutorials, see the [AGENTS.md](AGENTS.md) file for detailed setup instructions using `uv` and marimo notebooks.
 
+## Latest Release
+
+**v0.0.1** - Typography & Icons Enhancement  
+View detailed release notes in [Release_v0.0.1.md](Release_v0.0.1.md) or check the [GitHub Releases](https://github.com/thliang01/unofficial-ai-twinkle-website/releases) page.
+
 ## Community Guidelines
 
 - Follow the [STYLEGUIDE.md](STYLEGUIDE.md) for notebook development and Traditional Chinese content standards
@@ -66,6 +71,8 @@ For notebook development and tutorials, see the [AGENTS.md](AGENTS.md) file for 
 - `STYLEGUIDE.md` - Development and content style guidelines
 - `CODE_OF_CONDUCT.md` - Community behavior guidelines
 - `assets/` - Custom SVG icons and mascot images
+- `Release_v0.0.1.md` - GitHub release notes and documentation for v0.0.1
+- `PR_Message_v0.0.1.md` - Pull request documentation for v0.0.1 enhancements
 - `marimo_notebook/` - Marimo notebooks for Gemini API tutorials
 - `jupyter_notebook/` - Original Jupyter notebooks
 - `official_image/` - Official Twinkle AI logos and brand assets (includes favicon)
